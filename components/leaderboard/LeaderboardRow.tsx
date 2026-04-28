@@ -64,7 +64,7 @@ export default function LeaderboardRow({
       <div className="flex-shrink-0">{getRankBadge(rank)}</div>
 
       <Avatar className="h-10 w-10">
-        <AvatarImage src={avatar} alt={username} />
+        {avatar && <AvatarImage src={avatar} alt={username} />}
         <AvatarFallback>{username.substring(0, 2).toUpperCase()}</AvatarFallback>
       </Avatar>
 

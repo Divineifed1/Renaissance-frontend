@@ -52,11 +52,11 @@ export async function getPortfolioOverview(): Promise<PortfolioData> {
   };
 }
 
-export async function getPerformanceData(timeRange: string = '30d'): Promise<PerformanceData> {
+export async function getPerformanceData(timeRange: string = '30d'): Promise<PerformanceData[]> {
   // TODO: Replace with actual API endpoint
   const days = timeRange === '7d' ? 7 : timeRange === '90d' ? 90 : timeRange === '1y' ? 365 : 30;
   
-  const data: PerformanceData = [];
+  const data: PerformanceData[] = [];
   let currentValue = 100000;
   
   for (let i = days; i >= 0; i--) {
